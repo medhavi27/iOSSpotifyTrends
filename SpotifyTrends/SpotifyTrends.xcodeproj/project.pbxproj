@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BD6193821ACC00E000A2C9F /* HomeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6193721ACC00E000A2C9F /* HomeNavViewController.swift */; };
+		2BD6193A21ACC275000A2C9F /* OptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */; };
 		B4A4D46921A87C4A003360AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4D46821A87C4A003360AB /* AppDelegate.swift */; };
 		B4A4D46B21A87C4A003360AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4D46A21A87C4A003360AB /* ViewController.swift */; };
 		B4A4D46E21A87C4A003360AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A4D46C21A87C4A003360AB /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BD6193721ACC00E000A2C9F /* HomeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavViewController.swift; sourceTree = "<group>"; };
+		2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B4A4D46521A87C4A003360AB /* SpotifyTrends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyTrends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A4D46821A87C4A003360AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4A4D46A21A87C4A003360AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				B4A4D46821A87C4A003360AB /* AppDelegate.swift */,
 				B4A4D46A21A87C4A003360AB /* ViewController.swift */,
+				2BD6193721ACC00E000A2C9F /* HomeNavViewController.swift */,
+				2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */,
 				B4A4D46C21A87C4A003360AB /* Main.storyboard */,
 				B4A4D46F21A87C4D003360AB /* Assets.xcassets */,
 				B4A4D47121A87C4D003360AB /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A4D46B21A87C4A003360AB /* ViewController.swift in Sources */,
+				2BD6193A21ACC275000A2C9F /* OptionsCollectionViewCell.swift in Sources */,
+				2BD6193821ACC00E000A2C9F /* HomeNavViewController.swift in Sources */,
 				B4A4D46921A87C4A003360AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
