@@ -15,7 +15,7 @@ UICollectionViewDelegateFlowLayout {
     var optionsArray: [OptionsCollectionViewCell.Options] = []
     
     let optionsReuseIdentifer = "optionsReuse"
-    let padding: CGFloat = 10
+    let padding: CGFloat = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ UICollectionViewDelegateFlowLayout {
         // scrollDirection can be vertical or horizontal
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = padding
-        layout.minimumLineSpacing = padding
+        layout.minimumLineSpacing = 2*padding
         optionsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         optionsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         optionsCollectionView.backgroundColor = .black
@@ -59,8 +59,8 @@ UICollectionViewDelegateFlowLayout {
         cell.configure(for: option)
         cell.setNeedsUpdateConstraints()
         cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.white.cgColor
-        
+        cell.layer.cornerRadius = 5
+        cell.layer.borderColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0).cgColor
         return cell
     }
     
@@ -69,6 +69,26 @@ UICollectionViewDelegateFlowLayout {
             let length = (collectionView.frame.width - padding * 3) / 2.0
             let height = ((collectionView.frame.height - padding * 3) / 2.0) - 50.0
             return CGSize(width: length, height: height)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if optionsArray[indexPath.item] == OptionsCollectionViewCell.Options.threemonths {
+            let modalViewController = ThreeMonthModal()
+            present(modalViewController, animated: true, completion: nil)
+        }
+        else if optionsArray[indexPath.item] == OptionsCollectionViewCell.Options.sixmonths {
+            let modalViewController = SixMonthModal()
+            present(modalViewController, animated: true, completion: nil)
+        }
+        else if optionsArray[indexPath.item] == OptionsCollectionViewCell.Options.year {
+            let modalViewController = YearModal()
+            present(modalViewController, animated: true, completion: nil)
+        }
+        else {
+            let modalViewController = RandomModal()
+            present(modalViewController, animated: true, completion: nil)
+        }
         
     }
     /*

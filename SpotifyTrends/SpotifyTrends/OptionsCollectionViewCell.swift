@@ -24,7 +24,7 @@ class OptionsCollectionViewCell: UICollectionViewCell {
         sortBy.translatesAutoresizingMaskIntoConstraints = false
         sortBy.font = UIFont(name: sortBy.font.fontName, size: 20)
         sortBy.backgroundColor = .black
-        sortBy.textColor = .white
+        sortBy.textColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
         sortBy.textAlignment = .center
         contentView.addSubview(sortBy)
     

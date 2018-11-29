@@ -66,10 +66,6 @@ class ViewController: UIViewController {
             logoimg.heightAnchor.constraint(equalToConstant: 600)
             ])
         
-        
-        
-        
-        
     }
     @objc func pushNavViewController() {
         let navViewController = HomeNavViewController()

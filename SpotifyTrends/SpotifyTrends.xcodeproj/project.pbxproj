@@ -14,6 +14,10 @@
 		B4A4D46E21A87C4A003360AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A4D46C21A87C4A003360AB /* Main.storyboard */; };
 		B4A4D47021A87C4D003360AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A4D46F21A87C4D003360AB /* Assets.xcassets */; };
 		B4A4D47321A87C4D003360AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A4D47121A87C4D003360AB /* LaunchScreen.storyboard */; };
+		B4DD5D7C21B04CC2001CC821 /* ThreeMonthModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD5D7B21B04CC2001CC821 /* ThreeMonthModal.swift */; };
+		B4DD5D7E21B053A2001CC821 /* SixMonthModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD5D7D21B053A2001CC821 /* SixMonthModal.swift */; };
+		B4DD5D8021B053B3001CC821 /* YearModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD5D7F21B053B3001CC821 /* YearModal.swift */; };
+		B4DD5D8221B053BD001CC821 /* RandomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD5D8121B053BD001CC821 /* RandomModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		B4A4D46F21A87C4D003360AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4A4D47221A87C4D003360AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4A4D47421A87C4D003360AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4DD5D7B21B04CC2001CC821 /* ThreeMonthModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeMonthModal.swift; sourceTree = "<group>"; };
+		B4DD5D7D21B053A2001CC821 /* SixMonthModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixMonthModal.swift; sourceTree = "<group>"; };
+		B4DD5D7F21B053B3001CC821 /* YearModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearModal.swift; sourceTree = "<group>"; };
+		B4DD5D8121B053BD001CC821 /* RandomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,10 @@
 				B4A4D46821A87C4A003360AB /* AppDelegate.swift */,
 				B4A4D46A21A87C4A003360AB /* ViewController.swift */,
 				2BD6193721ACC00E000A2C9F /* HomeNavViewController.swift */,
+				B4DD5D7B21B04CC2001CC821 /* ThreeMonthModal.swift */,
+				B4DD5D7D21B053A2001CC821 /* SixMonthModal.swift */,
+				B4DD5D7F21B053B3001CC821 /* YearModal.swift */,
+				B4DD5D8121B053BD001CC821 /* RandomModal.swift */,
 				2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */,
 				B4A4D46C21A87C4A003360AB /* Main.storyboard */,
 				B4A4D46F21A87C4D003360AB /* Assets.xcassets */,
@@ -143,8 +155,12 @@
 			files = (
 				B4A4D46B21A87C4A003360AB /* ViewController.swift in Sources */,
 				2BD6193A21ACC275000A2C9F /* OptionsCollectionViewCell.swift in Sources */,
+				B4DD5D8221B053BD001CC821 /* RandomModal.swift in Sources */,
+				B4DD5D8021B053B3001CC821 /* YearModal.swift in Sources */,
 				2BD6193821ACC00E000A2C9F /* HomeNavViewController.swift in Sources */,
 				B4A4D46921A87C4A003360AB /* AppDelegate.swift in Sources */,
+				B4DD5D7C21B04CC2001CC821 /* ThreeMonthModal.swift in Sources */,
+				B4DD5D7E21B053A2001CC821 /* SixMonthModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
