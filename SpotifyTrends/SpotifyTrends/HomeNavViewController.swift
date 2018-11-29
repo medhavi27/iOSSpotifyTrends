@@ -15,7 +15,7 @@ UICollectionViewDelegateFlowLayout {
     var optionsArray: [OptionsCollectionViewCell.Options] = []
     
     let optionsReuseIdentifer = "optionsReuse"
-    let padding: CGFloat = 8
+    let padding: CGFloat = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: optionsReuseIdentifer, for: indexPath) as! OptionsCollectionViewCell
         let option = optionsArray[indexPath.item]
         cell.configure(for: option)
-        cell.needsUpdateConstraints()
+        cell.setNeedsUpdateConstraints()
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.white.cgColor
         
@@ -67,7 +67,7 @@ UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // We want || padding IMAGE padding IMAGE padding ||
             let length = (collectionView.frame.width - padding * 3) / 2.0
-            let height = (collectionView.frame.height - padding * 3) / 2.0
+            let height = ((collectionView.frame.height - padding * 3) / 2.0) - 50.0
             return CGSize(width: length, height: height)
         
     }

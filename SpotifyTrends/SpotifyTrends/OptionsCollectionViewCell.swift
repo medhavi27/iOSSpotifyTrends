@@ -10,6 +10,7 @@ import UIKit
 
 class OptionsCollectionViewCell: UICollectionViewCell {
     var sortBy: UILabel!
+    let padding: CGFloat = 8
     
     enum Options: String, CaseIterable {
         case threemonths = "Last 3 Months"
@@ -21,9 +22,10 @@ class OptionsCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         sortBy = UILabel()
         sortBy.translatesAutoresizingMaskIntoConstraints = false
-        sortBy.font = UIFont(name: sortBy.font.fontName, size: 11)
-        sortBy.backgroundColor = .green
+        sortBy.font = UIFont(name: sortBy.font.fontName, size: 20)
+        sortBy.backgroundColor = .black
         sortBy.textColor = .white
+        sortBy.textAlignment = .center
         contentView.addSubview(sortBy)
     
     }
@@ -33,8 +35,8 @@ class OptionsCollectionViewCell: UICollectionViewCell {
     }
     override func updateConstraints() {
         NSLayoutConstraint.activate([
-            sortBy.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            sortBy.topAnchor.constraint(equalTo: contentView.topAnchor),
+            sortBy.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            sortBy.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             sortBy.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             sortBy.heightAnchor.constraint(equalTo: contentView.heightAnchor)
             ])
