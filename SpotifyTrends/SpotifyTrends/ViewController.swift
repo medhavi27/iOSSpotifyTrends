@@ -18,8 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = .black
-        
-        
+        title = "Spotify Trends - Login"
        
         loginbutton = UIButton()
         loginbutton.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +33,7 @@ class ViewController: UIViewController {
         welcomeview.text = "Welcome to Spotify Trends. To get Started, login with your Spotify account:"
         welcomeview.font = UIFont(name: (welcomeview.font?.fontName)!, size: 30)
         welcomeview.backgroundColor = .black
+        welcomeview.isEditable = false
         
         let imagel = UIImage(named: "exp")
         logoimg = UIImageView(image: imagel)
