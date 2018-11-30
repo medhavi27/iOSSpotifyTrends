@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
   
     var loginbutton: UIButton!
     var logoimg: UIImageView!
     var welcomeview: UITextView!
+    let endPoint = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
         welcomeview = UITextView()
         welcomeview.translatesAutoresizingMaskIntoConstraints = false
         welcomeview.textColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
-        welcomeview.text = "Welcome to Spotify Trends. To get Started, login with your Spotify account:"
+        welcomeview.text = "Continue with your Spotify account:"
         welcomeview.font = UIFont(name: (welcomeview.font?.fontName)!, size: 30)
         welcomeview.backgroundColor = .black
         welcomeview.isEditable = false
@@ -45,6 +47,25 @@ class ViewController: UIViewController {
         view.addSubview(welcomeview)
         
         setupConstraints()
+        let parameters: [String:Any] = [
+            "authtoken": AppDelegate.spotifySession?.accessToken
+        ]
+        Alamofire.request(endPoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
+                }
+//                let jsonDecoder = JSONDecoder()
+//                if let user = try? jsonDecoder.decode(User.self, from: data) {
+//                    completion(user)
+//                } else {
+//                    print("Invalid Response Data")
+//                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     @objc func setupConstraints() {
        
