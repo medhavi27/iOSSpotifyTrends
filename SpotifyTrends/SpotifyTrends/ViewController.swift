@@ -78,7 +78,7 @@ class ViewController: UIViewController {
             ])
         NSLayoutConstraint.activate ([
             welcomeview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400),
-            welcomeview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            welcomeview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             welcomeview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             welcomeview.heightAnchor.constraint(equalToConstant: 100)
             ])

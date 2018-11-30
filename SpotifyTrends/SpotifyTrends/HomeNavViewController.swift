@@ -60,7 +60,7 @@ UICollectionViewDelegateFlowLayout {
             optionsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
         NSLayoutConstraint.activate([
-            textLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 540),
+            textLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 520),
             textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             textLabel.heightAnchor.constraint(equalToConstant: 300),
             textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
