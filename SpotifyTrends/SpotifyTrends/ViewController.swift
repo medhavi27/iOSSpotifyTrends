@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = .black
         title = "Spotify Trends - Login"
+        //AppDelegate.spotifySession?.accessToken
        
         loginbutton = UIButton()
         loginbutton.translatesAutoresizingMaskIntoConstraints = false
