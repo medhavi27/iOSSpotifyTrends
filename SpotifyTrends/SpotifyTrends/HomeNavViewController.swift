@@ -13,9 +13,11 @@ UICollectionViewDelegateFlowLayout {
 
     var optionsCollectionView: UICollectionView!
     var optionsArray: [OptionsCollectionViewCell.Options] = []
+    var textLabel: UIImageView!
     
     let optionsReuseIdentifer = "optionsReuse"
-    let padding: CGFloat = 8
+    let padding: CGFloat = 10
+    let heighpadding: CGFloat = 40
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +37,34 @@ UICollectionViewDelegateFlowLayout {
         optionsCollectionView.dataSource = self
         optionsCollectionView.delegate = self
         optionsCollectionView.register(OptionsCollectionViewCell.self, forCellWithReuseIdentifier: optionsReuseIdentifer)
+        textLabel = UIImageView()
+        let image2 = UIImage(named: "spotifytr2")
+        textLabel = UIImageView(image: image2)
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+//        textLabel.text = "Choose a Time Period"
+//        textLabel.textColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
+//        textLabel.font = UIFont(name: (textLabel.font?.fontName)!, size: 30)
+//        textLabel.backgroundColor = .black
         view.addSubview(optionsCollectionView)
+        view.addSubview(textLabel)
         // Do any additional setup after loading the view.
+        
         setUpConstraints()
     }
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            optionsCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            optionsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            optionsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            optionsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             optionsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            optionsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            optionsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
+        NSLayoutConstraint.activate([
+            textLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 540),
+            textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            textLabel.heightAnchor.constraint(equalToConstant: 300),
+            textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            ])
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,16 +76,16 @@ UICollectionViewDelegateFlowLayout {
         let option = optionsArray[indexPath.item]
         cell.configure(for: option)
         cell.setNeedsUpdateConstraints()
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 5
-        cell.layer.borderColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0).cgColor
+        cell.layer.cornerRadius = 8
+        cell.layer.masksToBounds = true
+        cell.layer.borderColor = UIColor(red: 25.0/255, green: 178.0/255, blue: 107.0/255, alpha: 1.0).cgColor
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // We want || padding IMAGE padding IMAGE padding ||
             let length = (collectionView.frame.width - padding * 3) / 2.0
-            let height = ((collectionView.frame.height - padding * 3) / 2.0) - 50.0
+            let height = ((collectionView.frame.height - heighpadding * 3) / 2.0) - 100.0
             return CGSize(width: length, height: height)
         
     }

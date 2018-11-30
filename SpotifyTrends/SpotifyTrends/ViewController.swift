@@ -25,9 +25,10 @@ class ViewController: UIViewController {
        
         loginbutton = UIButton()
         loginbutton.translatesAutoresizingMaskIntoConstraints = false
-        loginbutton.backgroundColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
+        loginbutton.backgroundColor = UIColor(red: 25.0/255, green: 178.0/255, blue: 107.0/255, alpha: 1.0)
         loginbutton.setTitleColor(.black, for: .normal)
-        loginbutton.setTitle("Continue", for: .normal)
+        loginbutton.setTitle("CONTINUE", for: .normal)
+        loginbutton.layer.cornerRadius = 10
         loginbutton.addTarget(self, action: #selector(pushNavViewController), for: .touchUpInside)
         
         welcomeview = UITextView()
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
         welcomeview.backgroundColor = .black
         welcomeview.isEditable = false
         
-        let imagel = UIImage(named: "exp")
+        let imagel = UIImage(named: "spotifytr")
         logoimg = UIImageView(image: imagel)
         logoimg.translatesAutoresizingMaskIntoConstraints = false
         
@@ -70,22 +71,22 @@ class ViewController: UIViewController {
     @objc func setupConstraints() {
        
         NSLayoutConstraint.activate ([
-            loginbutton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 450),
+            loginbutton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 510),
            loginbutton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             loginbutton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
            loginbutton.heightAnchor.constraint(equalToConstant: 50)
             ])
         NSLayoutConstraint.activate ([
-            welcomeview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 250),
-            welcomeview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            welcomeview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            welcomeview.heightAnchor.constraint(equalToConstant: 200)
+            welcomeview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400),
+            welcomeview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            welcomeview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+            welcomeview.heightAnchor.constraint(equalToConstant: 100)
             ])
         NSLayoutConstraint.activate ([
             logoimg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            logoimg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            logoimg.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 60),
-            logoimg.heightAnchor.constraint(equalToConstant: 600)
+            logoimg.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            logoimg.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            logoimg.heightAnchor.constraint(equalToConstant: 350)
             ])
         
     }

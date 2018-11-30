@@ -65,7 +65,7 @@ class ThreeMonthModal: UIViewController {
         artistPic.translatesAutoresizingMaskIntoConstraints = false
         artistPic.contentMode = .scaleAspectFit
         artistPic.layer.masksToBounds = false
-        artistPic.layer.cornerRadius =  5
+        artistPic.layer.cornerRadius =  30
         artistPic.image = dummyPic
         view.addSubview(artistPic)
         

@@ -22,10 +22,12 @@ class OptionsCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         sortBy = UILabel()
         sortBy.translatesAutoresizingMaskIntoConstraints = false
-        sortBy.font = UIFont(name: sortBy.font.fontName, size: 20)
-        sortBy.backgroundColor = .black
-        sortBy.textColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
+        sortBy.font = UIFont(name: sortBy.font.fontName, size: 25)
+        sortBy.backgroundColor = UIColor(red: 25.0/255, green: 178.0/255, blue: 107.0/255, alpha: 1.0)
+        sortBy.textColor = .black
         sortBy.textAlignment = .center
+        sortBy.adjustsFontSizeToFitWidth = true
+
         contentView.addSubview(sortBy)
     
     }
@@ -35,8 +37,8 @@ class OptionsCollectionViewCell: UICollectionViewCell {
     }
     override func updateConstraints() {
         NSLayoutConstraint.activate([
-            sortBy.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            sortBy.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            sortBy.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            sortBy.topAnchor.constraint(equalTo: contentView.topAnchor),
             sortBy.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             sortBy.heightAnchor.constraint(equalTo: contentView.heightAnchor)
             ])

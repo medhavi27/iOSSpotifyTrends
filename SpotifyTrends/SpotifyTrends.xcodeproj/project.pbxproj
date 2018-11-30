@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B93F49021B1BC2D00DAB0C0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93F48F21B1BC2D00DAB0C0 /* UserInfo.swift */; };
+		2B93F49321B1CA4600DAB0C0 /* circular-std-book-cufonfonts in Resources */ = {isa = PBXBuildFile; fileRef = 2B93F49221B1CA4600DAB0C0 /* circular-std-book-cufonfonts */; };
 		2BD6193821ACC00E000A2C9F /* HomeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6193721ACC00E000A2C9F /* HomeNavViewController.swift */; };
 		2BD6193A21ACC275000A2C9F /* OptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */; };
 		63AD6A31BA30EA80E2B13F50 /* Pods_SpotifyTrends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F186CA6197D2757080EAD8 /* Pods_SpotifyTrends.framework */; };
@@ -28,6 +29,7 @@
 		038EB061A1542F8CEF71E10F /* Pods-SpotifyTrends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyTrends.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpotifyTrends/Pods-SpotifyTrends.release.xcconfig"; sourceTree = "<group>"; };
 		27EFB487D36910AA98C4F595 /* Pods-SpotifyTrends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyTrends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpotifyTrends/Pods-SpotifyTrends.debug.xcconfig"; sourceTree = "<group>"; };
 		2B93F48F21B1BC2D00DAB0C0 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		2B93F49221B1CA4600DAB0C0 /* circular-std-book-cufonfonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "circular-std-book-cufonfonts"; path = "../../../../Downloads/circular-std-book-cufonfonts"; sourceTree = "<group>"; };
 		2BD6193721ACC00E000A2C9F /* HomeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavViewController.swift; sourceTree = "<group>"; };
 		2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		57F186CA6197D2757080EAD8 /* Pods_SpotifyTrends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyTrends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2B93F49121B1C9E700DAB0C0 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				2B93F49221B1CA4600DAB0C0 /* circular-std-book-cufonfonts */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B4A4D45C21A87C4A003360AB = {
 			isa = PBXGroup;
 			children = (
@@ -91,18 +101,19 @@
 				B4A4D46821A87C4A003360AB /* AppDelegate.swift */,
 				B4A4D46A21A87C4A003360AB /* ViewController.swift */,
 				2BD6193721ACC00E000A2C9F /* HomeNavViewController.swift */,
+				2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */,
 				B4DD5D7B21B04CC2001CC821 /* ThreeMonthModal.swift */,
 				2B93F48F21B1BC2D00DAB0C0 /* UserInfo.swift */,
 				B419977421B0C995004B82C7 /* DisplayView.swift */,
 				B4DD5D7D21B053A2001CC821 /* SixMonthModal.swift */,
 				B4DD5D7F21B053B3001CC821 /* YearModal.swift */,
 				B4DD5D8121B053BD001CC821 /* RandomModal.swift */,
-				2BD6193921ACC275000A2C9F /* OptionsCollectionViewCell.swift */,
 				B4A4D46C21A87C4A003360AB /* Main.storyboard */,
 				B4A4D46F21A87C4D003360AB /* Assets.xcassets */,
 				B4A4D47121A87C4D003360AB /* LaunchScreen.storyboard */,
 				B4DD5D8321B081EE001CC821 /* SpotifyiOS.framework */,
 				B4A4D47421A87C4D003360AB /* Info.plist */,
+				2B93F49121B1C9E700DAB0C0 /* New Group */,
 			);
 			path = SpotifyTrends;
 			sourceTree = "<group>";
@@ -179,6 +190,7 @@
 				B4A4D47321A87C4D003360AB /* LaunchScreen.storyboard in Resources */,
 				B4A4D47021A87C4D003360AB /* Assets.xcassets in Resources */,
 				B4A4D46E21A87C4A003360AB /* Main.storyboard in Resources */,
+				2B93F49321B1CA4600DAB0C0 /* circular-std-book-cufonfonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
