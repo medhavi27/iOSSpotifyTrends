@@ -19,6 +19,7 @@ class ThreeMonthModal: UIViewController {
     var songLabel: UILabel!
     var songPic: UIImageView!
     var otherSongs: UILabel!
+    let endpoint = ""
     
     let spotifyGreen = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
     
@@ -33,7 +34,7 @@ class ThreeMonthModal: UIViewController {
         homeButton.backgroundColor = spotifyGreen
         homeButton.setTitleColor(.white, for: .normal)
         homeButton.addTarget(self, action: #selector(home), for: .touchUpInside)
-        homeButton.layer.cornerRadius = 5
+        homeButton.layer.cornerRadius = 10
         view.addSubview(homeButton)
         
         titleLabel = UILabel()
@@ -48,7 +49,7 @@ class ThreeMonthModal: UIViewController {
         profilePic.translatesAutoresizingMaskIntoConstraints = false
         profilePic.contentMode = .scaleAspectFit
         profilePic.layer.masksToBounds = false
-        profilePic.layer.cornerRadius =  5
+        profilePic.layer.cornerRadius =  20
         profilePic.image = dummyPic
         view.addSubview(profilePic)
         
@@ -105,7 +106,10 @@ class ThreeMonthModal: UIViewController {
         
         setUpConstraints()
     }
-    
+//    static func getInfo(_ didGetInfo: @escaping ){
+// THIS IS THE GET REQUEST
+//    }
+//
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),

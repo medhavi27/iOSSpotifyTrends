@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         loginbutton.translatesAutoresizingMaskIntoConstraints = false
         loginbutton.backgroundColor = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
         loginbutton.setTitleColor(.black, for: .normal)
-        loginbutton.setTitle("Login", for: .normal)
+        loginbutton.setTitle("Continue", for: .normal)
         loginbutton.addTarget(self, action: #selector(pushNavViewController), for: .touchUpInside)
         
         welcomeview = UITextView()
