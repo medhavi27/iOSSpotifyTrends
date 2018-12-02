@@ -20,12 +20,18 @@ class ThreeMonthModal: UIViewController {
     var songPic: UIImageView!
     var otherSongs: UILabel!
     let endpoint = ""
+    var artists: [Artist]!=[]
     
     let spotifyGreen = UIColor(red: 26.0/255, green: 164.0/255, blue: 80.0/255, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        NetworkManager.getArtists(timespan: "short_term") { (artists) in
+            self.artists = artists
+            self.otherArtists.text = artists[0].name
+        }
+        
         let dummyPic = getImageFromURLString(urlString: "https://timedotcom.files.wordpress.com/2018/09/bill-gates-africa.jpg")
         // Do any additional setup after loading the view.
         homeButton = UIButton()
@@ -66,12 +72,12 @@ class ThreeMonthModal: UIViewController {
         artistPic.contentMode = .scaleAspectFit
         artistPic.layer.masksToBounds = false
         artistPic.layer.cornerRadius =  30
-        artistPic.image = dummyPic
+        artistPic.image = dummyPic//getImageFromURLString(urlString: artists[0].images[0].url) 
         view.addSubview(artistPic)
         
         otherArtists = UILabel()
         otherArtists.translatesAutoresizingMaskIntoConstraints = false
-        otherArtists.text =  "Top 5 Artists: Bill Gates, Imagine Dragons, Zedd, Steve Jobs, The 1975"
+        //"Top 5 Artists: Bill Gates, Imagine Dragons, Zedd, Steve Jobs, The 1975"
         otherArtists.textAlignment = .center
         otherArtists.numberOfLines = 0
         otherArtists.font = .systemFont(ofSize: 14, weight: .bold)
@@ -102,7 +108,6 @@ class ThreeMonthModal: UIViewController {
         otherSongs.font = .systemFont(ofSize: 14, weight: .bold)
         otherSongs.textColor = spotifyGreen
         view.addSubview(otherSongs)
-        
         
         setUpConstraints()
     }

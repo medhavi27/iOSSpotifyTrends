@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
+import SpotifyLogin
 
 class ViewController: UIViewController {
   
-    var loginbutton: UIButton!
+    var loginbutton: SpotifyLoginButton!
     var logoimg: UIImageView!
     var welcomeview: UITextView!
     let endPoint = ""
@@ -23,13 +24,13 @@ class ViewController: UIViewController {
         title = "Spotify Trends - Login"
         //AppDelegate.spotifySession?.accessToken
        
-        loginbutton = UIButton()
+        loginbutton = SpotifyLoginButton(viewController: self, scopes: [.streaming, .userLibraryRead])
         loginbutton.translatesAutoresizingMaskIntoConstraints = false
         loginbutton.backgroundColor = UIColor(red: 25.0/255, green: 178.0/255, blue: 107.0/255, alpha: 1.0)
         loginbutton.setTitleColor(.black, for: .normal)
         loginbutton.setTitle("CONTINUE", for: .normal)
         loginbutton.layer.cornerRadius = 10
-        loginbutton.addTarget(self, action: #selector(pushNavViewController), for: .touchUpInside)
+        //loginbutton.addTarget(self, action: #selector(pushNavViewController), for: .touchUpInside)
         
         welcomeview = UITextView()
         welcomeview.translatesAutoresizingMaskIntoConstraints = false
@@ -47,26 +48,27 @@ class ViewController: UIViewController {
         view.addSubview(logoimg)
         view.addSubview(welcomeview)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
         setupConstraints()
-        let parameters: [String:Any] = [
-            "authtoken": AppDelegate.spotifySession?.accessToken
-        ]
-        Alamofire.request(endPoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
-            switch response.result {
-            case .success(let data):
-                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-                    print(json)
-                }
-//                let jsonDecoder = JSONDecoder()
-//                if let user = try? jsonDecoder.decode(User.self, from: data) {
-//                    completion(user)
-//                } else {
-//                    print("Invalid Response Data")
+//        let parameters: [String:Any] = [
+//            "authtoken": AppDelegate.spotifySession?.accessToken
+//        ]
+//        Alamofire.request(endPoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
+//            switch response.result {
+//            case .success(let data):
+//                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+//                    print(json)
 //                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+////                let jsonDecoder = JSONDecoder()
+////                if let user = try? jsonDecoder.decode(User.self, from: data) {
+////                    completion(user)
+////                } else {
+////                    print("Invalid Response Data")
+////                }
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
     @objc func setupConstraints() {
        
@@ -96,7 +98,12 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(navViewController, animated: true)
     }
 
-
+    @objc func loginSuccessful() {
+        print("dfsdf")
+        let navViewController = HomeNavViewController()
+        //navViewController.delegate = self
+        navigationController?.pushViewController(navViewController, animated: true)
+    }
 
 }
 

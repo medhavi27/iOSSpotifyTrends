@@ -7,5 +7,5 @@ target 'SpotifyTrends' do
 
   # Pods for SpotifyTrends
    pod 'Alamofire'
-
+   pod 'SpotifyLogin', '~> 0.1'
 end
