@@ -45,6 +45,13 @@ class NetworkManager {
     
     private static let endpoint = ""
     
+    static func getImageFromURLString(urlString: String) -> UIImage? {
+        if let url = URL(string: urlString), let data = try? Data(contentsOf: url) {
+            return UIImage(data: data)
+        }
+        return nil
+    }
+    
     static func getArtists(timespan: String, _ didGetArtists: @escaping ([Artist]) -> Void) {
         SpotifyLogin.shared.getAccessToken { (accessToken, error) in
             if error == nil {

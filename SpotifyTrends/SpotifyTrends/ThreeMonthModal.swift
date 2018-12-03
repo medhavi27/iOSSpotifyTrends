@@ -27,12 +27,14 @@ class ThreeMonthModal: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+    
+        //this function would get top artists from user data if authentication worked...
         NetworkManager.getArtists(timespan: "short_term") { (artists) in
             self.artists = artists
             self.otherArtists.text = artists[0].name
         }
         
-        let dummyPic = getImageFromURLString(urlString: "https://timedotcom.files.wordpress.com/2018/09/bill-gates-africa.jpg")
+        let dummyPic = NetworkManager.getImageFromURLString(urlString: "https://timedotcom.files.wordpress.com/2018/09/bill-gates-africa.jpg")
         // Do any additional setup after loading the view.
         homeButton = UIButton()
         homeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +79,7 @@ class ThreeMonthModal: UIViewController {
         
         otherArtists = UILabel()
         otherArtists.translatesAutoresizingMaskIntoConstraints = false
-        //"Top 5 Artists: Bill Gates, Imagine Dragons, Zedd, Steve Jobs, The 1975"
+        otherArtists.text = "Top 5 Artists: Bill Gates, Imagine Dragons, Zedd, Steve Jobs, The 1975"
         otherArtists.textAlignment = .center
         otherArtists.numberOfLines = 0
         otherArtists.font = .systemFont(ofSize: 14, weight: .bold)
@@ -111,10 +113,7 @@ class ThreeMonthModal: UIViewController {
         
         setUpConstraints()
     }
-//    static func getInfo(_ didGetInfo: @escaping ){
-// THIS IS THE GET REQUEST
-//    }
-//
+    
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
@@ -180,17 +179,10 @@ class ThreeMonthModal: UIViewController {
             ])
     }
     
-    
     @objc func home() {
         dismiss(animated: true, completion: nil)
     }
 
-    func getImageFromURLString(urlString: String) -> UIImage? {
-        if let url = URL(string: urlString), let data = try? Data(contentsOf: url) {
-            return UIImage(data: data)
-        }
-        return nil
-    }
     /*
     // MARK: - Navigation
 
