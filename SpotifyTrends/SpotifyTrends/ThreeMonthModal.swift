@@ -74,12 +74,12 @@ class ThreeMonthModal: UIViewController {
         artistPic.contentMode = .scaleAspectFit
         artistPic.layer.masksToBounds = false
         artistPic.layer.cornerRadius =  30
-        artistPic.image = dummyPic//getImageFromURLString(urlString: artists[0].images[0].url) 
+        artistPic.image = NetworkManager.getImageFromURLString(urlString: "https://images-na.ssl-images-amazon.com/images/I/A12L7td6VYL._CR0,0,3840,2880_._SL1000_.jpg") //getImageFromURLString(urlString: artists[0].images[0].url)
         view.addSubview(artistPic)
         
         otherArtists = UILabel()
         otherArtists.translatesAutoresizingMaskIntoConstraints = false
-        otherArtists.text = "Top 5 Artists: Bill Gates, Imagine Dragons, Zedd, Steve Jobs, The 1975"
+        otherArtists.text = "Top 5 Artists: Zedd, Imagine Dragons, Kanye West, Taylor Swift, The 1975"
         otherArtists.textAlignment = .center
         otherArtists.numberOfLines = 0
         otherArtists.font = .systemFont(ofSize: 14, weight: .bold)
@@ -99,12 +99,12 @@ class ThreeMonthModal: UIViewController {
         songPic.contentMode = .scaleAspectFit
         songPic.layer.masksToBounds = false
         songPic.layer.cornerRadius =  5
-        songPic.image = dummyPic
+        songPic.image = NetworkManager.getImageFromURLString(urlString: "https://images-na.ssl-images-amazon.com/images/I/619IgMpQZRL.jpg")
         view.addSubview(songPic)
         
         otherSongs = UILabel()
         otherSongs.translatesAutoresizingMaskIntoConstraints = false
-        otherSongs.text =  "Top 5 Songs: Bill Gates, Imagine Dragons, Zedd, Steve Jobs, The 1975, asdgasgassdgsadgasdfasdsdfadasfd"
+        otherSongs.text =  "Top 5 Songs: Clarity, The Middle, Stay, Beautiful Now, Addicted to a Memory"
         otherSongs.textAlignment = .center
         otherSongs.numberOfLines = 0
         otherSongs.font = .systemFont(ofSize: 14, weight: .bold)
@@ -139,7 +139,7 @@ class ThreeMonthModal: UIViewController {
         NSLayoutConstraint.activate([
             artistLabel.topAnchor.constraint(equalTo: profilePic.bottomAnchor, constant: 40),
             artistLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            artistLabel.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 30),
+            artistLabel.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20),
             artistLabel.bottomAnchor.constraint(equalTo: artistLabel.topAnchor, constant: 60)
             ])
         
@@ -160,7 +160,7 @@ class ThreeMonthModal: UIViewController {
         NSLayoutConstraint.activate([
             songLabel.topAnchor.constraint(equalTo: otherArtists.bottomAnchor, constant: 50),
             songLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            songLabel.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 30),
+            songLabel.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20),
             songLabel.bottomAnchor.constraint(equalTo: songLabel.topAnchor, constant: 60)
             ])
         
