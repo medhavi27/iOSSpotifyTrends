@@ -13,7 +13,7 @@ Links to backend: https://github.com/grantIee/Spotilyze-Backend
 Screenshots: 
 
 
-<img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S1.png" alt="Home Page" width="250"/> <img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S4.png" alt="Login Authorization" width="250"/> <img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S2.png" alt="Collection View" width="250"/> <img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S3.png" alt="Data Display" width="250"/>
+<img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S1.png" alt="Home Page" width="400"/> <img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S4.png" alt="Login Authorization" width="400"/> <img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S2.png" alt="Collection View" width="400"/> <img src="https://github.com/medhavi27/iOSSpotifyTrends/blob/master/S3.png" alt="Data Display" width="400"/>
 
 
 iOS requirements: Our app uses Autolayout (NSLayout) to add views, labels, images, etc. We used a collectionview in screen 3 (the time periods) to select which time period the user wanted. We use a UINavigationController to navigate to the post-login screen and a Modal View Controller to present the data. We integrated the Spotify API.  
